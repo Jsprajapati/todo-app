@@ -1,0 +1,12 @@
+<div class="card text-white bg-success">
+    <div class="card-body">
+        <h4 class="card-title">{{todo.title}}</h4>
+        <p class="card-text">{{todo.description}}</p>
+        <p class="border-rounded">Date : {{todo.date}}</p>
+        <div class="row">
+            <div class="col-md-12">
+                <button type="button" class="btn btn-danger" (click)="removeToDo()">X</button>
+            </div>
+        </div>
+    </div>
+</div>

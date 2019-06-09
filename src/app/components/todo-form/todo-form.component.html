@@ -1,0 +1,51 @@
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Todo Form</h4>
+        <form [formGroup]="todoForm">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="">Title</label>
+                        <input type="text" class="form-control" autocomplete="off" [ngClass]="{'is-invalid' : titleControl.invalid && (titleControl.touched || titleControl.dirty), 'is-valid': titleControl.valid}" name="title" placeholder="" formControlName="title">
+                        <div class="invalid-feedback">
+                            <span *ngIf="titleControl?.errors?.required">Title is mandatory</span>
+                            <span *ngIf="titleControl?.errors?.minlength">{{titleControl?.errors?.minlength?.requiredLength - titleControl?.errors?.minlength?.actualLength}} more characters required.</span>
+                        </div>
+                        <div class="valid-feedback">
+                            Great, Valid Title
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Description</label>
+                        <input type="text" class="form-control" name="title" [ngClass]="{'is-invalid':descriptionControl.invalid && (descriptionControl.touched || descriptionControl.dirty ),'is-valid':descriptionControl.valid}" placeholder="" formControlName="description">
+                        <div class="invalid-feedback">
+                            <span *ngIf="descriptionControl?.errors?.required">Description is mandatory</span>
+                            <span *ngIf="descriptionControl?.errors?.minlength">{{descriptionControl?.errors?.minlength?.requiredLength - descriptionControl?.errors?.minlength?.actualLength}} more characters required.</span>
+                        </div>
+                        <div class="valid-feedback">
+                            Great, Valid Description
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Date</label>
+                        <input type="date" class="form-control" name="title" placeholder="" formControlName="date" [ngClass]="{'is-valid':dateControl.valid,'is-invalid':dateControl.invalid && (dateControl.touched || dateControl.dirty)}">
+                        <div class="invalid-feedback">
+                            <span *ngIf="dateControl?.errors?.required">Date is mandatory</span>
+                            <!-- <span *ngIf="dateControl?.errors?.minlength">{{descriptionControl?.errors?.minlength?.requiredLength - descriptionControl?.errors?.minlength?.actualLength}} more characters required.</span> -->
+                        </div>
+                        <div class="valid-feedback">
+                            Great, Valid Date
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-primary" [disabled]="todoForm.invalid" (click)="submitForm(todoForm.value)">Submit</button>
+                    <button type="reset" class="btn btn-dark">Reset</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
