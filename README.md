@@ -1,6 +1,6 @@
-# MyFirstApp
+# To Do App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.2.
+First Angular App Demo : This application is developed for maintaining the tasks.
 
 ## Development server
 
